@@ -5,7 +5,7 @@ LABEL Description="Apache-PHP" Vendor1="Apache Software Foundation" Version1="2.
 RUN powershell -Command \
     $ErrorActionPreference = 'Stop'; \
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; \
-    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/containers-windows/raw/main/apache-php/httpd-2.4.58-win64-VS17.zip -OutFile c:\apache.zip ; \
+    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/win-apache-php/raw/main/httpd-2.4.58-win64-VS17.zip -OutFile c:\apache.zip ; \
     Expand-Archive -Path c:\apache.zip -DestinationPath c:\ ; \
     Remove-Item c:\apache.zip -Force
 
