@@ -12,7 +12,7 @@ RUN powershell -Command \
 RUN powershell -Command \
     $ErrorActionPreference = 'Stop'; \
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; \
-    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/containers-windows/raw/main/apache-php/VC_redist.x64.exe -OutFile c:\vcredist_x64.exe ; \
+    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/win-apache-php/raw/main/VC_redist.x64.exe -OutFile c:\vcredist_x64.exe ; \
     start-Process c:\vcredist_x64.exe -ArgumentList '/quiet' -Wait ; \
     Remove-Item c:\vcredist_x64.exe -Force
 
