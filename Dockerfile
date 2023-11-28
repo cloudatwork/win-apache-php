@@ -19,7 +19,7 @@ RUN powershell -Command \
 RUN powershell -Command \
     $ErrorActionPreference = 'Stop'; \
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; \
-    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/containers-windows/raw/main/apache-php/php-8.1.26-Win32-vs16-x64.zip -OutFile c:\php.zip ; \
+    Invoke-WebRequest -Method Get -Uri https://github.com/cloudatwork/win-apache-php/raw/main/php-8.1.26-Win32-vs16-x64.zip -OutFile c:\php.zip ; \
     Expand-Archive -Path c:\php.zip -DestinationPath c:\php ; \
     Remove-Item c:\php.zip -Force
 
